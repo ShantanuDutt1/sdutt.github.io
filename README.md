@@ -19,7 +19,7 @@ This is my <a href="Resume">resume</a> that tells you mostly where I've been. Mo
 
 **General Analytics**
 - *Bird CLEF+ 2026 [in progress]: Using machine learning to find rare and undiscovered birds. A machine learning algorithm is being constructed to study recordings and find birds that are of conservation concern, and potentially, undiscovered. Submission for the competition will be in Summer 2026 and the model will be available here thereafter*
-- <a href="General Analytics/There are NOT plenty of fish (2020)">There are NOT plenty of fish in the sea</a>: For Map The Systems 2020, we undertook a local qualitative study on the health and education of fisheries in the lower mainland, BC, Canada. What we find is that there is a strong disconnect between the fiseries industry, ecology and the consumers. A number of qualitative research techniques were employed. The poster is the main derivative of the exercise.
+- <a href="General Analytics/There are NOT plenty of fish (2020)">There are NOT plenty of fish in the sea (2020)</a>: For Map The Systems 2020, we undertook a local qualitative study on the health and education of fisheries in the lower mainland, BC, Canada. What we find is that there is a strong disconnect between the fiseries industry, ecology and the consumers. A number of qualitative research techniques were employed. The poster is the main derivative of the exercise.
 
 **Environmental Education**
 - <a href="https://www.youtube.com/@Kaptain_Prithvi">Kaptain Prithvi</a>: My youtube channel where I make educational environmental content.
