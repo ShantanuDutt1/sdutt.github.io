@@ -15,7 +15,7 @@ This is my <a href="Resume">resume</a> that tells you mostly where I've been. Mo
 
 **GIS Analytics**
 - Thematic watershed mapping
-- Water map
+
 
 **General Analytics**
 - Wetland bird sound map
