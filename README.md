@@ -6,8 +6,9 @@ I am a scientist with a passion for solving problems, with a specialty in the en
 This is my <a href="https://github.com/ShantanuDutt1/shantanudutt1.github.io/tree/ed50692d3cf08f6e2a8f4c18f889255259958c52/Resume">resume</a> that tells you mostly where I've been. Mostly. Some of it is a secret.
 
 **Research**
-- Biocrusts
-- Salamander Habitat
+- <a href="">Biological Soil Crusts for Reclamation of Mine Tailings (2020)</a>: Biocrusts present a natural method for stabilizing dessication stressed substrates against wind and water erosion. This is an applied research project that uses analytical and experiemental research to quantify biocrust potential for reclamation on mine tailings facilities in Canada. A novel project for Canada at the time, the research project studied the composition and effects of biocrusts on mine tailings facilities as naturally developed. Experimental plots were also established to study the effects of ammendments on biocrust establishment. This project quantified reclamation effects and developed guidelines for future scopes to further develop biocrust applications against erosion. An R script in the appendix runs through all the statistical hypothesis tested and data products generated.
+
+- <a href="">Salamander Habitat Suitability Study (2018) </a>: The goal was to determine if terrestrial salamanders could be reintroduced to a naturalized land parcel in Coburg, ON, Canada. Based on the native salamanders in the surrounding area, a habitat suitablity goal was established. The land parcel was studied under a multi-variate habitat model that combined climate modelling, vernal pool hydrological modelling, and terrestiral woody debris distribution to develop a habitat suitability map for the land parcel for each salamander species. For the Lorie Lawson education center on the land, this is also a heat map on where they are most likely to find salamanders, once salamanders are present on the land.
 
 **White Papers**
 - 3D mapping
