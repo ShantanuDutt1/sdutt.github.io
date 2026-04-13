@@ -3,7 +3,7 @@ I am a scientist with a passion for solving problems, with a specialty in the en
 
 **Resume**
 
-This is my <a href="https://github.com/ShantanuDutt1/shantanudutt1.github.io/tree/ed50692d3cf08f6e2a8f4c18f889255259958c52/Resume">resume</a> that tells you mostly where I've been. Mostly. Some of it is a secret.
+This is my <a href="Resume">resume</a> that tells you mostly where I've been. Mostly. Some of it is a secret.
 
 **Research**
 - <a href="https://github.com/ShantanuDutt1/shantanudutt1.github.io/tree/9fd92e42a9294edfe5b9aa7f897672ea4b91d6af/Research/Biological%20Soil%20Crusts%20for%20Reclamation%20of%20Mine%20Tailings%20(2020)">Biological Soil Crusts for Reclamation of Mine Tailings (2020)</a>: Biocrusts present a natural method for stabilizing dessication stressed substrates against wind and water erosion. This is an applied research project that uses analytical and experiemental research to quantify biocrust potential for reclamation on mine tailings facilities in Canada. A novel project for Canada at the time, the research project studied the composition and effects of biocrusts on mine tailings facilities as naturally developed. Experimental plots were also established to study the effects of ammendments on biocrust establishment. This project quantified reclamation effects and developed guidelines for future scopes to further develop biocrust applications against erosion. An R script in the appendix runs through all the statistical hypothesis tested and data products generated.
