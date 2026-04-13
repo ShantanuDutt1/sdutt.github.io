@@ -12,6 +12,7 @@ This is my <a href="Resume">resume</a> that tells you mostly where I've been. Mo
 
 **White Papers**
 - 3D mapping
+- computational flood modelling
 
 **GIS Analytics**
 - Thematic watershed mapping
