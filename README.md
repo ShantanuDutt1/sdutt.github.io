@@ -6,15 +6,17 @@ I am a scientist with a passion for solving problems, with a specialty in the en
 This is my <a href="https://github.com/ShantanuDutt1/shantanudutt1.github.io/tree/ed50692d3cf08f6e2a8f4c18f889255259958c52/Resume">resume</a> that tells you mostly where I've been. Mostly. Some of it is a secret.
 
 **Research**
-
+- Biocrusts
 
 **White Papers**
-
+- 3D mapping
 
 **GIS Analytics**
-
+- Thematic watershed mapping
+- Water map
 
 **General Analytics**
-
+- Wetland bird sound map
 
 **Environmental Education**
+- KP
