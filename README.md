@@ -7,6 +7,7 @@ This is my <a href="https://github.com/ShantanuDutt1/shantanudutt1.github.io/tre
 
 **Research**
 - Biocrusts
+- Salamander Habitat
 
 **White Papers**
 - 3D mapping
@@ -17,6 +18,7 @@ This is my <a href="https://github.com/ShantanuDutt1/shantanudutt1.github.io/tre
 
 **General Analytics**
 - Wetland bird sound map
+- There are not plenty of fish in the sea
 
 **Environmental Education**
 - KP
