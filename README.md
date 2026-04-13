@@ -14,12 +14,12 @@ This is my <a href="Resume">resume</a> that tells you mostly where I've been. Mo
 - <a href="White Papers/3D Data Products in the Marine Industry: A 2024 Review">3D Data Products in the Marine Industry- A 2024 Review</a>: To understand where remote sensings, especially with 3D data products is progressing, we identify that the marine industry has a strong need. The use of 3D mapping, photorgrammetry, autonomous mapping, and AI monitoring will specialize for the marine and shipping industry. 
 
 **GIS Analytics**
-- Thematic watershed mapping
+- <a href="GIS Analytics/Watershed Management Plan for the Grijalva River Watershed in Tabasco and Chiapas (2017)">Watershed Management Plan for the Grijalva Watershed in Tabasco and Chiapas, Mexico (2017)</a>: A capstone project where the environmental landscape was projected for the Grijalva landscape and compared against existing landuse patterns. From sketching the watershed on a tracing paper to running climate models for agriculture; hundreds of hours went into preparing the report. The professor said the best project in the class would get to travel with him to Mexico and present it there, but alas that trip never came to be. Disappointing. We still got to present it to a government delegation who travelled over instead.
 
 
 **General Analytics**
-- Wetland bird sound map
-- There are not plenty of fish in the sea
+- *Bird CLEF+ 2026 [in progress]: Using machine learning to find rare and undiscovered birds. A machine learning algorithm is being constructed to study recordings and find birds that are of conservation concern, and potentially, undiscovered. Submission for the competition will be in Summer 2026 and the model will be available here thereafter*
+- <a href="General Analytics/There are NOT plenty of fish (2020)">There are NOT plenty of fish in the sea</a>: For Map The Systems 2020, we undertook a local qualitative study on the health and education of fisheries in the lower mainland, BC, Canada. What we find is that there is a strong disconnect between the fiseries industry, ecology and the consumers. A number of qualitative research techniques were employed. The poster is the main derivative of the exercise.
 
 **Environmental Education**
-- KP
+- <a href="https://www.youtube.com/@Kaptain_Prithvi">Kaptain Prithvi</a>: My youtube channel where I make educational environmental content.
