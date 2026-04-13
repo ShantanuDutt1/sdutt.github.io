@@ -11,8 +11,7 @@ This is my <a href="Resume">resume</a> that tells you mostly where I've been. Mo
 - <a href="Research/Salamander Habitat Suitability Study (2018)">Salamander Habitat Suitability Study (2018) </a>: The goal was to determine if terrestrial salamanders could be reintroduced to a naturalized land parcel in Coburg, ON, Canada. Based on the native salamanders in the surrounding area, a habitat suitablity goal was established. The land parcel was studied under a multi-variate habitat model that combined climate modelling, vernal pool hydrological modelling, and terrestiral woody debris distribution to develop a habitat suitability map for the land parcel for each salamander species. For the Lorie Lawson education center on the land, this is also a heat map on where they are most likely to find salamanders, once salamanders are present on the land.
 
 **White Papers**
-- 3D mapping
-- computational flood modelling
+- <a href="White Papers/3D Data Products in the Marine Industry: A 2024 Review">3D Data Products in the Marine Industry- A 2024 Review</a>: To understand where remote sensings, especially with 3D data products is progressing, we identify that the marine industry has a strong need. The use of 3D mapping, photorgrammetry, autonomous mapping, and AI monitoring will specialize for the marine and shipping industry. 
 
 **GIS Analytics**
 - Thematic watershed mapping
