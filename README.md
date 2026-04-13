@@ -6,6 +6,7 @@ I am a scientist with a passion for solving problems, with a specialty in the en
 - BSc (Honours) Environmental and Resource Sciences  
 
 **Skills**
+
 *Environmental Sampling*
 - Vegetation survey and plant ID.
 - Small mammal trapping.
