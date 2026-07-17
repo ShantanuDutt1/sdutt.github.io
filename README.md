@@ -18,7 +18,8 @@ This is my <a href="Resume">resume</a> that tells you mostly where I've been. Mo
 
 **General Analytics**
 - <a href="General Analytics/There are NOT plenty of fish (2020)">There are NOT plenty of fish in the sea (2020)</a>: For Map The Systems 2020, we undertook a local qualitative study on the health and education of fisheries in the lower mainland, BC, Canada. What we find is that there is a strong disconnect between the fisheries industry, ecology and the consumers. A number of qualitative research techniques were employed. The poster is the main derivative of the exercise.
-***- GeoSteerML (2026)- [In Progress. Coming in September 2026] A machine learning algorithm to guide drills in horizontal drill wells. ***
+
+- <B>GeoSteerML (2026)- [In Progress. Coming in September 2026] A machine learning algorithm to guide drills in horizontal drill wells. </B>
 
 **Environmental Education**
 - <a href="https://www.youtube.com/@Kaptain_Prithvi">Kaptain Prithvi</a>: My Youtube channel where I make educational environmental content.
