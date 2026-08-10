@@ -19,7 +19,7 @@ This is my <a href="Resume">resume</a> that tells you mostly where I've been. Mo
 **General Analytics**
 - <a href="General Analytics/There are NOT plenty of fish (2020)">There are NOT plenty of fish in the sea (2020)</a>: For Map The Systems 2020, we undertook a local qualitative study on the health and education of fisheries in the lower mainland, BC, Canada. What we find is that there is a strong disconnect between the fisheries industry, ecology and the consumers. A number of qualitative research techniques were employed. The poster is the main derivative of the exercise.
 
-- <B>GeoSteerML (2026)- [In Progress. Coming in September 2026] A machine learning algorithm to guide drills in horizontal drill wells. </B>
+-<a href="https://github.com/ShantanuDutt1/GeoSteerML">GeoSteerML: Predicting Wellbore Geology from Gamma Ray Logs (2026)</a>: A prototyping exercise built around the parameters of the ROGII Wellbore Geology Prediction competition on Kaggle. I built a full machine learning pipeline to estimate True Vertical Thickness (TVT) along horizontal wells using only Gamma Ray readings, combining geological alignment against typewell references, multi-scale signal processing, and leakage-aware feature engineering to train and evaluate LightGBM, CatBoost, and XGBoost models under well-grouped cross-validation. The project was not submitted to the competition, which was used only as a guideline for development.
 
 **Environmental Education**
 - <a href="https://www.youtube.com/@Kaptain_Prithvi">Kaptain Prithvi</a>: My Youtube channel where I make educational environmental content.
