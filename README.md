@@ -21,5 +21,8 @@ This is my <a href="Resume">resume</a> that tells you mostly where I've been. Mo
 
 - <a href="https://github.com/ShantanuDutt1/GeoSteerML">GeoSteerML: Predicting Wellbore Geology from Gamma Ray Logs (2026)</a>: A prototyping exercise built around the parameters of the ROGII Wellbore Geology Prediction competition on Kaggle. I built a full machine learning pipeline to estimate True Vertical Thickness (TVT) along horizontal wells using only Gamma Ray readings, combining geological alignment against typewell references, multi-scale signal processing, and leakage-aware feature engineering to train and evaluate LightGBM, CatBoost, and XGBoost models under well-grouped cross-validation. The project was not submitted to the competition, which was used only as a guideline for development.
 
+**General Programming**
+- <a href="https://github.com/ShantanuDutt1/Shark-Tank-AI.git">Shark Tank AI</a>: Have you ever wanted to practice and evaluate your proposal before presenting it to an investor? This is a proposal practicing tool for founders. Taking inspiration from the Kaggle x Google Agentic Coding Learning 2026, this is a completely agentic program also made using agentic coding. The program takes the concept of the popular show, Shark Tank, and allows a user to practice their proposals and pitches with AI agents in a fun way. Give it your proposal and try to convince the sharks and learn how you can do better.
+   
 **Environmental Education**
 - <a href="https://www.youtube.com/@Kaptain_Prithvi">Kaptain Prithvi</a>: My Youtube channel where I make educational environmental content.
