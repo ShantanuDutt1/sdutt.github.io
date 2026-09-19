@@ -1,0 +1,1355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  =====================================================================
+  INDEX.HTML  |  Shantanu Dutt portfolio
+  =====================================================================
+
+  THIS IS ONE SELF-CONTAINED FILE. Everything (words, styling, and
+  scripts) lives here, so the site cannot lose its styling if files are
+  moved, downloaded one at a time, or previewed on their own.
+
+  WHERE THINGS ARE (search for the label in capitals to jump to it)
+    HEAD ............. page title, description, fonts
+    STYLES ........... colors, fonts, layout (a <style> block in the HEAD).
+                       Section 1, TOKENS, is where to change the look.
+    HERO ............. name, tagline, top navigation
+    ABOUT ............ the opening statement
+    PROJECTS ......... filter buttons + project cards
+    EXPERIENCE ....... job timeline
+    AWARDS ........... awards, talks, education, certifications
+    SKILLS ........... grouped skill lists
+    CONTACT .......... closing band with email and resume buttons
+    FOOTER
+    HERO ANIMATION ... a <script> at the very bottom. Edit only its CONFIG block.
+    PAGE BEHAVIOR .... a <script> at the very bottom: the project filter buttons
+
+  EDIT MARKERS
+    "EDIT:" in a comment means the next lines are safe to change.
+    Ready-to-copy TEMPLATES for a new project, job, award, and skill group
+    sit inside comments at the end of each section.
+
+  LINK MAP: every link on the site, and where it came from
+  ---------------------------------------------------------------------
+  Internal paths are copied exactly from the original portfolio README.
+  Spaces are written as %20 and the colon as %3A so browsers always read
+  them correctly. The plain-text original is shown here for reference.
+
+    Resume
+       Resume
+    Biocrusts
+       Research/Biological Soil Crusts for Reclamation of Mine Tailings (2020)
+    Salamander study
+       Research/Salamander Habitat Suitability Study (2018)
+    Grijalva watershed plan
+       GIS Analytics/Watershed Management Plan for the Grijalva River Watershed in Tabasco and Chiapas (2017)
+    Fish poster
+       General Analytics/There are NOT plenty of fish (2020)
+    Marine 3D white paper
+       White Papers/3D Data Products in the Marine Industry: A 2024 Review
+    GeoSteerML (external)
+       https://github.com/ShantanuDutt1/GeoSteerML
+    Shark Tank AI (external)
+       https://github.com/ShantanuDutt1/Shark-Tank-AI
+       (the original had a trailing .git, which GitHub redirects to this address)
+    Kaptain Prithvi (external)
+       https://www.youtube.com/@Kaptain_Prithvi
+    GitHub profile (external)
+       https://github.com/ShantanuDutt1
+    Email
+       mailto:shantanudutt@alumni.trentu.ca  (used in 2 places: CONTACT and FOOTER)
+
+  IMPORTANT ABOUT THE INTERNAL PATHS
+  A link like  Research/Salamander Habitat Suitability Study (2018)  only works
+  if that exact file or folder exists in the same repository as this page.
+    - If it is a FILE (for example a PDF), add its extension to the link:
+        Research/Salamander%20Habitat%20Suitability%20Study%20(2018).pdf
+    - If it is a FOLDER, the folder must contain an index.html (or link to the
+      PDF inside it), otherwise GitHub Pages shows a 404.
+  =====================================================================
+-->
+
+<!-- EDIT: page title (browser tab and Google) and description -->
+<title>Shantanu Dutt | Environmental scientist</title>
+<meta name="description" content="Portfolio of Shantanu Dutt, an environmental analyst in mine reclamation, ecological restoration, GIS, and remote sensing.">
+
+<!-- EDIT: text shown when the site is shared on social media -->
+<meta property="og:title" content="Shantanu Dutt | Environmental scientist">
+<meta property="og:description" content="Mine tailings, salamander habitat, watershed plans, well logs, and AI agents. A portfolio of problem-solving where land, water, and data meet.">
+<meta property="og:type" content="website">
+
+<!-- Browser tab icon (an emoji). EDIT: change the emoji after font-size='90'> -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌍</text></svg>">
+
+<!-- Fonts: Bricolage Grotesque (headings) and Newsreader (body) from Google Fonts.
+     To change fonts, swap the family names here AND in --display / --serif in the STYLES block below. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&display=swap" rel="stylesheet">
+
+<!-- STYLES: all colors, fonts and layout. Numbered sections 1 to 10. -->
+<style>
+/* =====================================================================
+   STYLES  |  Shantanu Dutt portfolio
+   ---------------------------------------------------------------------
+   HOW THIS BLOCK IS ORGANIZED (search for the number to jump there)
+     1. TOKENS ......... colors, fonts, spacing. Change the look here first.
+     2. BASE ........... resets and small helpers used everywhere
+     3. HERO ........... the dark contour-map header
+     4. ABOUT .......... the big opening statement
+     5. PROJECTS ....... filter buttons, grid, and project cards
+     6. EXPERIENCE ..... the timeline
+     7. AWARDS + EDUCATION
+     8. SKILLS
+     9. CONTACT BAND
+    10. FOOTER
+   The hero animation settings live in the HERO ANIMATION script at the
+   bottom of this file (CONFIG block).
+   ===================================================================== */
+
+
+/* =====================================================================
+   1. TOKENS
+   Every color and font on the site comes from these variables.
+   Change a value here and it updates everywhere.
+   ===================================================================== */
+:root {
+  /* Page colors (light mode) */
+  --paper: #EAF0EF;   /* page background */
+  --card:  #F6F9F8;   /* project cards, skills strip */
+  --text:  #1B2E33;   /* main text */
+  --muted: #526A70;   /* dates, captions, secondary text */
+  --line:  #C8D5D4;   /* thin borders and dividers */
+  --link:  #1F6C7D;   /* link color */
+
+  /* Accent palette. Also used for the four project categories below. */
+  --moss:  #4E7A32;
+  --water: #2A7A8C;
+  --ochre: #B8791A;
+  --clay:  #B0503A;
+
+  /* Project category colors: the top edge and dot on each card.
+     Swap any of these for another accent color to recolor a category. */
+  --cat-research:  var(--moss);
+  --cat-mapping:   var(--water);
+  --cat-modelling: var(--ochre);
+  --cat-comm:      var(--clay);
+
+  /* Hero (the dark contour header) */
+  --hero-bg:    #0F2A31;                    /* background */
+  --hero-line:  rgba(180, 214, 214, 0.20);  /* thin contour lines */
+  --hero-index: rgba(224, 160, 60, 0.85);   /* bold "index" contour lines */
+  --hero-text:  #EAF0EF;                    /* name and buttons */
+  --btn-accent: #E0A03C;                    /* solid button fill */
+  --band:       #0F2A31;                    /* contact band background */
+
+  /* Fonts. The Google Fonts <link> in index.html loads the first two.
+     The rest of each list is the fallback if the font fails to load. */
+  --display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;  /* headings, labels */
+  --serif:   "Newsreader", Georgia, "Times New Roman", serif;             /* body text */
+}
+
+/* Dark mode: used automatically when the visitor's device is set to dark.
+   Only the values that change are listed here. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #0B1D22;
+    --card:  #12292F;
+    --text:  #DCE7E6;
+    --muted: #93AAAE;
+    --line:  #25414A;
+    --link:  #7CCADB;
+    --moss:  #8DB55E;
+    --water: #5FB4C6;
+    --ochre: #E0A03C;
+    --clay:  #E4806A;
+    --hero-bg: #08171B;
+    --band:    #12292F;
+  }
+}
+
+
+/* =====================================================================
+   2. BASE
+   ===================================================================== */
+*, *::before, *::after { box-sizing: border-box; }
+
+/* IMPORTANT: makes the `hidden` attribute always win. The project filter
+   depends on this. Do not remove. */
+[hidden] { display: none !important; }
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--text);
+  font-family: var(--serif);
+  font-size: 1.125rem;   /* base text size */
+  line-height: 1.65;
+  font-optical-sizing: auto;
+  overflow-x: hidden;
+}
+
+h1, h2, h3 { font-family: var(--display); margin: 0; font-optical-sizing: auto; }
+p { margin: 0; }
+ul, ol { margin: 0; padding: 0; list-style: none; }
+
+a { color: var(--link); text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 2px solid var(--ochre); outline-offset: 3px; border-radius: 2px; }
+
+/* Content column: max 1180px wide, with side margins on small screens. */
+.wrap { width: min(1180px, 100% - 2.5rem); margin-inline: auto; }
+
+/* Visually hidden but still read by screen readers. */
+.sr {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap;
+}
+
+/* Vertical spacing between page sections. */
+.section { padding: clamp(3rem, 7vw, 5.5rem) 0; }
+.section--flush-top { padding-top: 0; }                           /* no gap above (follows a section with its own bottom space) */
+.section--tight-top { padding-top: clamp(1.5rem, 3vw, 2.5rem); }  /* a smaller gap above */
+
+/* Shared heading + intro style for Projects, Experience, Skills. */
+.section-title {
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  font-variation-settings: "wdth" 80;
+}
+.section-intro { margin-top: 0.6rem; color: var(--muted); max-width: 34rem; }
+
+
+/* =====================================================================
+   3. HERO
+   The canvas is drawn by the HERO ANIMATION script at the bottom of the page. The two gradients in
+   .hero::after fade the map out behind the text so it stays readable.
+   ===================================================================== */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;   /* fills the screen */
+  display: flex;
+  flex-direction: column;
+  background: var(--hero-bg);
+  color: var(--hero-text);
+  overflow: hidden;
+  isolation: isolate;
+}
+#terrain { position: absolute; inset: 0; width: 100%; height: 100%; z-index: -2; }
+.hero::after {
+  content: "";
+  position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background:
+    linear-gradient(to top, var(--hero-bg) 0%, rgba(0,0,0,0) 58%),
+    linear-gradient(to right, var(--hero-bg) 0%, rgba(0,0,0,0) 55%);
+  opacity: 0.85;   /* raise for a calmer map, lower for a stronger one */
+}
+
+/* Top navigation */
+.topnav {
+  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  padding: 1.4rem clamp(1.25rem, 4vw, 3rem);
+  font-family: var(--display);
+  font-size: 0.95rem;
+}
+.topnav a { color: var(--hero-text); text-decoration: none; opacity: 0.85; }
+.topnav a:hover { opacity: 1; text-decoration: underline; }
+.topnav ul { display: flex; flex-wrap: wrap; gap: 0.25rem clamp(1rem, 3vw, 2rem); }
+.topnav .mark { font-weight: 650; opacity: 1; font-variation-settings: "wdth" 85; }
+
+/* Name, tagline, buttons (anchored to the bottom-left of the hero) */
+.hero-copy {
+  margin-top: auto;
+  padding: 0 clamp(1.25rem, 4vw, 3rem) clamp(2.5rem, 8vh, 5rem);
+  max-width: 1180px;
+}
+.hero h1 {
+  font-size: clamp(3.4rem, 13.5vw, 10.5rem);   /* name size: min, fluid, max */
+  line-height: 0.86;
+  font-weight: 760;
+  letter-spacing: -0.035em;
+  font-variation-settings: "wdth" 75;           /* 75 = condensed, 100 = normal width */
+}
+.hero h1 span { display: block; }               /* first and last name on separate lines */
+.lede {
+  margin-top: clamp(1.25rem, 3vh, 2rem);
+  max-width: 34rem;
+  font-size: clamp(1.15rem, 2.2vw, 1.4rem);
+  line-height: 1.5;
+  color: rgba(234, 240, 239, 0.92);
+}
+
+/* Buttons (used in the hero and the contact band) */
+.actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.75rem; }
+.btn {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.75rem 1.3rem;
+  border: 1.5px solid currentColor;
+  border-radius: 999px;
+  color: var(--hero-text);
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.btn:hover { text-decoration: none; background: rgba(234, 240, 239, 0.12); }
+.btn.solid { background: var(--btn-accent); border-color: var(--btn-accent); color: #0F2A31; }
+.btn.solid:hover { background: #F0B453; border-color: #F0B453; }
+
+
+/* =====================================================================
+   4. ABOUT
+   ===================================================================== */
+.about { padding-bottom: clamp(2rem, 5vw, 3.5rem); }
+.about .statement {
+  font-size: clamp(1.65rem, 3.8vw, 2.7rem);
+  line-height: 1.22;
+  max-width: 24em;
+  font-weight: 450;
+  letter-spacing: -0.008em;
+}
+.about .cols {
+  display: grid; grid-template-columns: 1fr; gap: 1.25rem 3rem;
+  margin-top: clamp(1.5rem, 3vw, 2.5rem);
+  max-width: 62rem;
+}
+@media (min-width: 800px) { .about .cols { grid-template-columns: 1fr 1fr; } }  /* two paragraphs side by side */
+.about .cols p { opacity: 0.88; font-size: 1.08rem; }
+
+
+/* =====================================================================
+   5. PROJECTS
+   5a. Filter buttons
+   5b. Grid layout (which cards are wide or narrow)
+   5c. Card styling
+   ===================================================================== */
+
+/* 5a. Filter buttons */
+.filters { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1.75rem 0 2rem; }
+.filters button {
+  font: 600 0.95rem/1 var(--display);
+  padding: 0.65rem 1.05rem;
+  background: transparent; color: var(--text);
+  border: 1.5px solid var(--line); border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+.filters button:hover { border-color: var(--text); }
+.filters button[aria-pressed="true"] { background: var(--text); border-color: var(--text); color: var(--paper); }
+
+/* 5b. Grid layout.
+   The grid has 6 columns on desktop. Each card's width is set by a class in index.html:
+       s6 = full width      s4 = two thirds      s3 = half      s2 = one third
+   Add class "wide" to a full-width (s6) card to put its title on the left and
+   its text on the right.
+   On tablets and phones everything stacks in one column.
+   When a filter is active (the grid gets the class "is-filtered"), the cards
+   re-flow into two even columns (one column on phones). */
+.grid { display: grid; gap: 1.25rem; grid-template-columns: minmax(0, 1fr); }
+.grid.is-filtered { grid-template-columns: repeat(auto-fill, minmax(min(100%, 480px), 1fr)); }
+
+@media (min-width: 901px) {
+  .grid:not(.is-filtered) { grid-template-columns: repeat(6, minmax(0, 1fr)); grid-auto-flow: dense; }
+  .grid:not(.is-filtered) .s6 { grid-column: span 6; }
+  .grid:not(.is-filtered) .s4 { grid-column: span 4; }
+  .grid:not(.is-filtered) .s3 { grid-column: span 3; }
+  .grid:not(.is-filtered) .s2 { grid-column: span 2; }
+}
+
+/* 5c. Card styling.
+   The card's category color comes from its data-cat attribute in index.html. */
+.project {
+  --cat: var(--cat-mapping);
+  display: flex; flex-direction: column;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--cat);
+  border-radius: 4px;
+}
+.project[data-cat="research"]  { --cat: var(--cat-research); }
+.project[data-cat="mapping"]   { --cat: var(--cat-mapping); }
+.project[data-cat="modelling"] { --cat: var(--cat-modelling); }
+.project[data-cat="comm"]      { --cat: var(--cat-comm); }
+
+/* Small fade-in when a card appears after clicking a filter. */
+.project.entering { animation: settle 0.4s ease-out both; }
+@keyframes settle { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .project.entering { animation: none; } }
+
+/* Inside a card: .head holds the category, year, and title.
+   .text holds the question, description, and link. */
+.project .head { display: flex; flex-direction: column; gap: 0.85rem; padding: 1.4rem 1.5rem 0; }
+.project .text { display: flex; flex-direction: column; gap: 0.85rem; padding: 0.85rem 1.5rem 1.6rem; flex: 1; }
+
+.meta {
+  display: flex; justify-content: space-between; align-items: baseline; gap: 1rem;
+  font-family: var(--display); font-size: 0.9rem; color: var(--muted);
+}
+.meta .tag { display: inline-flex; align-items: center; gap: 0.5rem; }
+.meta .tag::before { content: ""; width: 0.6rem; height: 0.6rem; border-radius: 50%; background: var(--cat); }
+.meta .year { font-weight: 650; color: var(--text); font-variant-numeric: tabular-nums; }
+
+.project h3 {
+  font-size: clamp(1.3rem, 2.2vw, 1.6rem);
+  line-height: 1.15; font-weight: 680; letter-spacing: -0.015em;
+  font-variation-settings: "wdth" 88;
+}
+.project h3 a { color: inherit; text-decoration: none; }
+.project h3 a:hover { color: var(--link); text-decoration: underline; }
+
+.project .lead { font-size: 1.2rem; line-height: 1.4; font-weight: 550; }   /* the opening question */
+.project .text p:not(.lead):not(.more) { font-size: 1.04rem; max-width: 68ch; }
+.more { margin-top: auto; padding-top: 0.4rem; font-family: var(--display); font-weight: 600; font-size: 0.98rem; }
+
+/* Wide cards (desktop, unfiltered only): title column on the left, text on the right. */
+@media (min-width: 721px) {
+  .grid:not(.is-filtered) .project.wide { display: grid; grid-template-columns: minmax(230px, 0.75fr) 1.6fr; }
+  .grid:not(.is-filtered) .project.wide .head { padding: clamp(1.5rem, 3vw, 2.25rem); border-right: 1px solid var(--line); }
+  .grid:not(.is-filtered) .project.wide .text { padding: clamp(1.5rem, 3vw, 2.25rem); }
+  .grid:not(.is-filtered) .project.wide h3 { font-size: clamp(1.6rem, 3vw, 2.2rem); }
+}
+
+
+/* =====================================================================
+   6. EXPERIENCE (timeline)
+   Each .job has a date on the left and the role on the right, joined by
+   a vertical line with a dot. The first (most recent) dot is ochre.
+   ===================================================================== */
+.timeline { margin-top: 2.25rem; }
+.job { display: grid; grid-template-columns: 11rem minmax(0, 1fr); gap: 0 1.75rem; }
+.job .when {
+  font-family: var(--display); font-size: 0.95rem; color: var(--muted);
+  padding-top: 0.4rem; font-variant-numeric: tabular-nums;
+}
+.job .what { position: relative; border-left: 2px solid var(--line); padding-left: 1.75rem; padding-bottom: 2.25rem; }
+.job:last-child .what { padding-bottom: 0; border-left-color: transparent; }   /* the line stops at the last dot */
+.job .what::before {                                                            /* the dot */
+  content: ""; position: absolute; left: -8px; top: 0.6rem;
+  width: 14px; height: 14px; border-radius: 50%;
+  background: var(--paper); border: 2px solid var(--muted);
+}
+.job:first-child .what::before { background: var(--ochre); border-color: var(--ochre); }
+
+.job h3 { font-size: 1.35rem; font-weight: 680; letter-spacing: -0.01em; font-variation-settings: "wdth" 88; line-height: 1.2; }
+.job .org { font-family: var(--display); color: var(--muted); font-size: 0.98rem; margin-top: 0.15rem; }
+.job ul { margin-top: 0.7rem; display: grid; gap: 0.35rem; }
+.job li { position: relative; padding-left: 1.1rem; font-size: 1.05rem; max-width: 64ch; line-height: 1.55; }
+.job li::before { content: ""; position: absolute; left: 0; top: 0.72em; width: 0.4rem; height: 2px; background: var(--muted); }
+
+/* Phones: date sits above the role instead of beside it. */
+@media (max-width: 720px) {
+  .job { grid-template-columns: 1fr; }
+  .job .when { padding: 0 0 0.35rem 1.75rem; }
+  .job .what { margin-left: 0.4rem; }
+}
+
+
+/* =====================================================================
+   7. AWARDS + EDUCATION (two columns on desktop)
+   ===================================================================== */
+.split { display: grid; gap: 3rem; grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 900px) { .split { grid-template-columns: 1.35fr 1fr; gap: 4rem; } }
+.split h2 { font-size: clamp(1.7rem, 3.2vw, 2.2rem); font-weight: 700; letter-spacing: -0.02em; font-variation-settings: "wdth" 82; }
+
+.stack { display: grid; gap: 1.5rem; margin-top: 1.5rem; }
+.entry { border-top: 1px solid var(--line); padding-top: 1rem; }
+.entry .date { font-family: var(--display); font-size: 0.9rem; color: var(--muted); }
+.entry h3 { font-size: 1.15rem; font-weight: 660; line-height: 1.25; margin-top: 0.15rem; font-variation-settings: "wdth" 90; }
+.entry p { margin-top: 0.35rem; font-size: 1.02rem; max-width: 56ch; }
+
+.subhead { font-family: var(--display); font-weight: 650; font-size: 1.15rem; margin-top: 2.5rem; font-variation-settings: "wdth" 90; }
+.chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+.chips li {
+  font-family: var(--display); font-size: 0.9rem;
+  padding: 0.35rem 0.8rem;
+  border: 1px solid var(--line); border-radius: 999px; background: var(--card);
+}
+
+
+/* =====================================================================
+   8. SKILLS
+   Groups auto-fit into columns: as many as fit, minimum 230px each.
+   ===================================================================== */
+.skills { background: var(--card); border-block: 1px solid var(--line); }
+.skill-grid {
+  display: grid; gap: 2rem 2.5rem; margin-top: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
+}
+.skill-grid h3 {
+  font-size: 1.1rem; font-weight: 680;
+  padding-bottom: 0.5rem; border-bottom: 2px solid var(--text);
+  font-variation-settings: "wdth" 90;
+}
+.skill-grid ul { margin-top: 0.75rem; display: grid; gap: 0.3rem; }
+.skill-grid li { font-size: 1.02rem; line-height: 1.45; }
+
+
+/* =====================================================================
+   9. CONTACT BAND
+   ===================================================================== */
+.band { background: var(--band); color: #E8F0EF; padding: clamp(3.5rem, 8vw, 6rem) 0; }
+.band p.big { font-size: clamp(1.6rem, 3.6vw, 2.6rem); line-height: 1.25; max-width: 24em; font-weight: 420; }
+.band p.big a { color: #E0A03C; }
+.band .actions { margin-top: 2rem; }
+
+/* The "redacted" bar: hover or focus it to reveal the text underneath. */
+.redacted {
+  background: #030B0D; color: transparent;
+  padding: 0 0.35em; border-radius: 2px;
+  cursor: help; transition: background 0.25s, color 0.25s;
+  font-style: italic;
+}
+.redacted:hover, .redacted:focus-visible { background: transparent; color: #E0A03C; }
+
+
+/* =====================================================================
+   10. FOOTER
+   ===================================================================== */
+footer { padding: 2.5rem 0 3rem; font-family: var(--display); font-size: 0.95rem; color: var(--muted); }
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; }
+footer ul { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; }
+</style>
+</head>
+
+<body>
+
+
+<!--
+  =====================================================================
+  HERO
+  The dark header. The contour map behind it is drawn into the canvas
+  by the HERO ANIMATION script at the bottom of this file.
+  =====================================================================
+-->
+<header class="hero" id="top">
+  <canvas id="terrain" aria-hidden="true"></canvas>
+
+  <!-- EDIT: top navigation. The href="#..." values must match the section ids below
+       (projects, experience, skills, contact). -->
+  <nav class="topnav" aria-label="Primary">
+    <a class="mark" href="#top">Portfolio</a>
+    <ul>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="hero-copy">
+    <!-- EDIT: your name. Each <span> is one line. -->
+    <h1><span>Shantanu</span><span>Dutt</span></h1>
+
+    <!-- EDIT: one-sentence tagline -->
+    <p class="lede">Environmental scientist. I put mines, forests, and wetlands back together, then build the maps, models, and code that show whether it worked.</p>
+
+    <p class="actions">
+      <a class="btn solid" href="#projects">Browse the projects</a>
+      <a class="btn" href="#experience">See the experience</a>
+    </p>
+  </div>
+</header>
+
+
+<main>
+
+<!--
+  =====================================================================
+  ABOUT
+  =====================================================================
+-->
+<section class="section about" id="about">
+  <div class="wrap">
+    <h2 class="sr">About</h2>
+
+    <!-- EDIT: the big opening statement -->
+    <p class="statement">What does it take to bring a mine site back to life? I've spent my career finding out, in the field and at the keyboard.</p>
+
+    <!-- EDIT: two supporting paragraphs (shown side by side on desktop) -->
+    <div class="cols">
+      <p>In the field, I've sampled soil, water, and wildlife, mapped ecosystems, planted and live-staked disturbed ground, and run amphibian and fish salvages across mining, forestry, and land management projects. At the keyboard, I turn what I measured into GIS maps, statistical and flood models, remote sensing indices, and the technical reports that clients and regulators rely on.</p>
+      <p>Today I'm an Environmental Analyst at North Shield Environmental in Vancouver, building GIS web applications and prototyping ways to clean indoor air with biocrusts. I hold an MSc in Ecological Restoration from Simon Fraser University and BCIT, and an honours BSc in Environmental and Resource Sciences from Trent University.</p>
+    </div>
+  </div>
+</section>
+
+
+<!--
+  =====================================================================
+  PROJECTS
+  ---------------------------------------------------------------------
+  HOW A CARD WORKS
+    data-cat="..."   the card's color. One of: research, mapping, modelling, comm
+    data-tags="..."  the filter tab the card appears under. Use the SAME word as
+                     data-cat so each card lives under exactly one tab.
+                     (Must match a data-filter word on the buttons below.)
+    class size:      s6 = full width, s4 = two thirds, s3 = half, s2 = one third
+                     add "wide" to an s6 card for a title-left, text-right layout
+    Cards appear in the order they are written here.
+
+  TO ADD A PROJECT: copy the template at the bottom of this section,
+  paste it after the last card, and fill it in.
+  TO REMOVE ONE: delete its whole <article> ... </article> block.
+  =====================================================================
+-->
+<section class="section section--tight-top" id="projects">
+  <div class="wrap">
+    <h2 class="section-title">Projects</h2>
+    <p class="section-intro">Pick the kind of work you're looking for, or scroll through all of it.</p>
+
+    <!-- Filter buttons. data-filter must match words used in the cards' data-tags.
+         Keep the "all" button as it is. Behavior is in the PAGE BEHAVIOR script at the bottom. -->
+    <div class="filters" role="group" aria-label="Filter projects">
+      <button type="button" data-filter="all" aria-pressed="true">All</button>
+      <button type="button" data-filter="research" aria-pressed="false">Research</button>
+      <button type="button" data-filter="mapping" aria-pressed="false">Mapping</button>
+      <button type="button" data-filter="modelling" aria-pressed="false">Modelling and Code</button>
+      <button type="button" data-filter="comm" aria-pressed="false">Communication</button>
+    </div>
+    <p class="sr" id="status" role="status" aria-live="polite"></p>
+
+    <div class="grid" id="grid">
+
+      <!-- ---------- PROJECT: Biocrusts (2020) ---------- -->
+      <article class="project wide s6" data-cat="research" data-tags="research">
+        <div class="head">
+          <p class="meta"><span class="tag">Research</span><span class="year">2020</span></p>
+          <!-- LINK (internal): Research/Biological Soil Crusts for Reclamation of Mine Tailings (2020) -->
+          <h3><a href="Research/Biological%20Soil%20Crusts%20for%20Reclamation%20of%20Mine%20Tailings%20(2020)">Biological Soil Crusts for Reclamation of Mine Tailings</a></h3>
+        </div>
+        <div class="text">
+          <p class="lead">What if the best way to heal a mine is to let the ground grow its own armor?</p>
+          <p>Biological soil crusts are the living skin of moss, lichen, and microbes that forms on dry ground, and they can hold stressed soil against wind and water erosion. This applied research project, my MSc thesis work, asked how much they can do on mine tailings facilities in Canada, a question that was new to the country at the time.</p>
+          <p>I did field work across four mine sites, pairing GIS spatial sampling and interpolation with lab and statistical analysis to see what the crusts were made of and what they did. Then I built experimental plots to test which amendments help a crust get established. The result is a quantified picture of the reclamation effects, plus guidelines for the next round of biocrust research against erosion.</p>
+          <p>The project was run with Stantec and Taseko | Gibraltar Mine, backed by $15,000 in grant funding, and it contributed to Gibraltar winning the Jake McDonald Annual Award for Metal Mine Reclamation. It's also fully reproducible: the appendix includes the R script that runs every hypothesis test and produces every data product.</p>
+          <p class="more"><a href="Research/Biological%20Soil%20Crusts%20for%20Reclamation%20of%20Mine%20Tailings%20(2020)">Read the study</a></p>
+        </div>
+      </article>
+
+      <!-- ---------- PROJECT: Salamander habitat study (2018) ---------- -->
+      <article class="project s3" data-cat="research" data-tags="research">
+        <div class="head">
+          <p class="meta"><span class="tag">Research</span><span class="year">2018</span></p>
+          <!-- LINK (internal): Research/Salamander Habitat Suitability Study (2018) -->
+          <h3><a href="Research/Salamander%20Habitat%20Suitability%20Study%20(2018)">Salamander Habitat Suitability Study</a></h3>
+        </div>
+        <div class="text">
+          <p class="lead">Where would you look for a salamander that isn't there yet?</p>
+          <p>That's the puzzle behind this study: could terrestrial salamanders be reintroduced to a reclaimed, naturalized land parcel in Cobourg, Ontario, and if so, where would they thrive? I sampled 30 hectares for salamanders, vernal pools, water quality, and soil quality, and used the salamanders native to the surrounding area to set a habitat suitability goal.</p>
+          <p>Then I put the parcel through a multi-variable habitat model that combined climate modelling, vernal pool hydrology, and the distribution of woody debris on the ground. The output is a suitability map for each species, built in partnership with Trent Research Centre and Northumberland Land Trust. For the Lorie Lawson education center on the land, it doubles as a heat map: once salamanders arrive, it shows visitors where they're most likely to spot one.</p>
+          <p class="more"><a href="Research/Salamander%20Habitat%20Suitability%20Study%20(2018)">Read the study</a></p>
+        </div>
+      </article>
+
+      <!-- ---------- PROJECT: Grijalva watershed plan (2017) ---------- -->
+      <article class="project s3" data-cat="mapping" data-tags="mapping">
+        <div class="head">
+          <p class="meta"><span class="tag">Mapping</span><span class="year">2017</span></p>
+          <!-- LINK (internal): GIS Analytics/Watershed Management Plan for the Grijalva River Watershed in Tabasco and Chiapas (2017) -->
+          <h3><a href="GIS%20Analytics/Watershed%20Management%20Plan%20for%20the%20Grijalva%20River%20Watershed%20in%20Tabasco%20and%20Chiapas%20(2017)">Watershed Management Plan for the Grijalva River Watershed</a></h3>
+        </div>
+        <div class="text">
+          <p class="lead">What would a river basin look like if it were planned around what the land can actually do?</p>
+          <p>This capstone project answers that for the Grijalva watershed in Tabasco and Chiapas, Mexico. I projected the watershed's environmental landscape and compared it against the land-use patterns already on the ground. It began with sketching the watershed on tracing paper and ended with climate models for agriculture, with hundreds of hours in between.</p>
+          <p>The professor dangled a trip to Mexico for the best project in the class. That trip never came to be, but a government delegation traveled over instead, and we presented the plan to them.</p>
+          <p class="more"><a href="GIS%20Analytics/Watershed%20Management%20Plan%20for%20the%20Grijalva%20River%20Watershed%20in%20Tabasco%20and%20Chiapas%20(2017)">Read the plan</a></p>
+        </div>
+      </article>
+
+      <!-- ---------- PROJECT: GeoSteerML (2026) ---------- -->
+      <article class="project wide s6" data-cat="modelling" data-tags="modelling">
+        <div class="head">
+          <p class="meta"><span class="tag">Modelling and Code</span><span class="year">2026</span></p>
+          <!-- LINK (external): GitHub repository -->
+          <h3><a href="https://github.com/ShantanuDutt1/GeoSteerML">GeoSteerML: Predicting Wellbore Geology from Gamma Ray Logs</a></h3>
+        </div>
+        <div class="text">
+          <p class="lead">Can a single gamma ray log tell you where a horizontal well sits in the rock?</p>
+          <p>GeoSteerML is a prototype built around the parameters of the ROGII Wellbore Geology Prediction competition on Kaggle. I built a full machine learning pipeline that estimates True Vertical Thickness (TVT) along horizontal wells using nothing but Gamma Ray readings.</p>
+          <p>The pipeline aligns each well geologically against typewell references, processes the signal at multiple scales, and uses leakage-aware feature engineering to keep the results honest. LightGBM, CatBoost, and XGBoost models are then trained and evaluated with well-grouped cross-validation. I never submitted it to the competition; it served as a guideline for development.</p>
+          <p class="more"><a href="https://github.com/ShantanuDutt1/GeoSteerML">View on GitHub</a></p>
+        </div>
+      </article>
+
+      <!-- ---------- PROJECT: Shark Tank AI (2026) ---------- -->
+      <article class="project s3" data-cat="modelling" data-tags="modelling">
+        <div class="head">
+          <p class="meta"><span class="tag">Modelling and Code</span><span class="year">2026</span></p>
+          <!-- LINK (external): GitHub repository -->
+          <h3><a href="https://github.com/ShantanuDutt1/Shark-Tank-AI">Shark Tank AI</a></h3>
+        </div>
+        <div class="text">
+          <p class="lead">Have you ever wanted to practice and evaluate your proposal before presenting it to an investor?</p>
+          <p>This is a proposal practicing tool for founders. Taking inspiration from the Kaggle x Google Agentic Coding Learning 2026, this is a completely agentic program also made using agentic coding. The program takes the concept of the popular show, Shark Tank, and allows a user to practice their proposals and pitches with AI agents in a fun way. Give it your proposal and try to convince the sharks and learn how you can do better.</p>
+          <p class="more"><a href="https://github.com/ShantanuDutt1/Shark-Tank-AI">View on GitHub</a></p>
+        </div>
+      </article>
+
+      <!-- ---------- PROJECT: Fisheries poster (2020) ---------- -->
+      <article class="project s3" data-cat="research" data-tags="research">
+        <div class="head">
+          <p class="meta"><span class="tag">Research</span><span class="year">2020</span></p>
+          <!-- LINK (internal): General Analytics/There are NOT plenty of fish (2020) -->
+          <h3><a href="General%20Analytics/There%20are%20NOT%20plenty%20of%20fish%20(2020)">There are NOT plenty of fish in the sea</a></h3>
+        </div>
+        <div class="text">
+          <p class="lead">There are plenty of fish in the sea, right?</p>
+          <p>For Map The Systems 2020, we ran a local qualitative study of the health and education of fisheries in the Lower Mainland, BC. What we found is a strong disconnect between the fisheries industry, the ecology, and the consumers who buy the fish. We used a number of qualitative research techniques to get there, and the poster that came out of it is the best way to see the results.</p>
+          <p class="more"><a href="General%20Analytics/There%20are%20NOT%20plenty%20of%20fish%20(2020)">See the poster</a></p>
+        </div>
+      </article>
+
+      <!-- ---------- PROJECT: Marine 3D white paper (2024) ---------- -->
+      <article class="project s4" data-cat="research" data-tags="research">
+        <div class="head">
+          <p class="meta"><span class="tag">Research</span><span class="year">2024</span></p>
+          <!-- LINK (internal): White Papers/3D Data Products in the Marine Industry: A 2024 Review -->
+          <h3><a href="White%20Papers/3D%20Data%20Products%20in%20the%20Marine%20Industry%3A%20A%202024%20Review">3D Data Products in the Marine Industry: A 2024 Review</a></h3>
+        </div>
+        <div class="text">
+          <p class="lead">Where is remote sensing headed, and who needs it most?</p>
+          <p>This white paper makes the case that the marine industry has a strong need. It looks at how 3D mapping, photogrammetry, autonomous mapping, and AI monitoring are set to specialize for marine and shipping, and what that means for where remote sensing goes next.</p>
+          <p class="more"><a href="White%20Papers/3D%20Data%20Products%20in%20the%20Marine%20Industry%3A%20A%202024%20Review">Read the white paper</a></p>
+        </div>
+      </article>
+
+      <!-- ---------- PROJECT: Kaptain Prithvi (YouTube) ---------- -->
+      <article class="project s2" data-cat="comm" data-tags="comm">
+        <div class="head">
+          <p class="meta"><span class="tag">Communication</span></p>
+          <!-- LINK (external): YouTube channel -->
+          <h3><a href="https://www.youtube.com/@Kaptain_Prithvi">Kaptain Prithvi</a></h3>
+        </div>
+        <div class="text">
+          <p class="lead">Want environmental science you can watch instead of read?</p>
+          <p>Kaptain Prithvi is my YouTube channel, where I make educational environmental content.</p>
+          <p class="more"><a href="https://www.youtube.com/@Kaptain_Prithvi">Watch on YouTube</a></p>
+        </div>
+      </article>
+
+      <!--
+        TEMPLATE: NEW PROJECT CARD
+        Copy from <article> to </article>, paste it above this comment, then edit.
+        Sizes: s6 (add "wide" for a two-column look), s4, s3, s2.
+
+      <article class="project s3" data-cat="research" data-tags="research">
+        <div class="head">
+          <p class="meta"><span class="tag">Research</span><span class="year">2027</span></p>
+          <h3><a href="Folder/Your%20File%20Name.pdf">Project title</a></h3>
+        </div>
+        <div class="text">
+          <p class="lead">An opening question that hooks the reader?</p>
+          <p>What it is, in plain words. What you did and how. What came out of it.</p>
+          <p class="more"><a href="Folder/Your%20File%20Name.pdf">Read the study</a></p>
+        </div>
+      </article>
+      -->
+
+    </div>
+  </div>
+</section>
+
+
+<!--
+  =====================================================================
+  EXPERIENCE
+  Most recent job first. The first entry gets the highlighted (ochre) dot.
+  TO ADD A JOB: copy the template at the bottom, paste it where it belongs
+  in time order, and fill it in.
+  =====================================================================
+-->
+<section class="section section--flush-top" id="experience">
+  <div class="wrap">
+    <h2 class="section-title">Experience</h2>
+    <p class="section-intro">Field work, analysis, and reporting, most recent first.</p>
+
+    <ol class="timeline">
+
+      <li class="job">
+        <p class="when">Jan 2025 to present</p>
+        <div class="what">
+          <h3>Environmental Analyst</h3>
+          <p class="org">North Shield Environmental, Vancouver, BC</p>
+          <ul>
+            <li>Build GIS web applications and demo models.</li>
+            <li>Develop technology that uses biocrusts to bioremediate indoor air quality.</li>
+            <li>Research automated 3D modelling.</li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="job">
+        <p class="when">Mar 2023 to Jan 2024</p>
+        <div class="what">
+          <h3>Jr. Survey Technician (contract)</h3>
+          <p class="org">Stantec, Prince George, BC</p>
+          <ul>
+            <li>Ran breeding bird sweeps, amphibian and fish salvages, and wildlife camera monitoring.</li>
+            <li>Collected water quality, soil, and noise monitoring samples.</li>
+            <li>Wrote and reviewed technical wildlife and monitoring reports.</li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="job">
+        <p class="when">Feb 2022 to Jan 2023</p>
+        <div class="what">
+          <h3>Terrestrial Ecologist</h3>
+          <p class="org">Chu Cho Environmental, Prince George, BC</p>
+          <ul>
+            <li>Carried out revegetation, live staking, and terrestrial ecosystem mapping on mine sites, and tested soils for reclamation compliance.</li>
+            <li>Analyzed remote sensing data to build monitoring indices, and wrote reclamation plans for mine sites.</li>
+            <li>Restored wildlife corridors and ran lichen surveys on grant-funded projects.</li>
+            <li>Worked with and for Indigenous stakeholders of the Tsay Keh Dene Nation.</li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="job">
+        <p class="when">Nov 2020 to Dec 2021</p>
+        <div class="what">
+          <h3>Director, and GIS Analyst (contract)</h3>
+          <p class="org">Above Atlantis Consulting Inc., Vancouver, BC</p>
+          <ul>
+            <li>Designed and prototyped scientific analytical tools, and oversaw internal research and contracted researchers.</li>
+            <li>Secured and managed over $45,000 in grant funding.</li>
+            <li>Developed QGIS plugins and models for computational flood modelling.</li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="job">
+        <p class="when">May 2019 to May 2020</p>
+        <div class="what">
+          <h3>Graduate Researcher</h3>
+          <p class="org">British Columbia Institute of Technology, Burnaby, BC</p>
+          <ul>
+            <li>Designed and led the biocrust reclamation research described above, from analytical and experimental design to field work at four mine sites.</li>
+            <li>Secured $15,000 in grant funding, in partnership with Stantec and Taseko | Gibraltar Mine.</li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="job">
+        <p class="when">Apr 2017 to Apr 2018</p>
+        <div class="what">
+          <h3>Undergraduate Researcher</h3>
+          <p class="org">Trent University, Peterborough, ON</p>
+          <ul>
+            <li>Designed and ran the salamander reintroduction study described above, with interviews, field sampling, lab analysis, and modelling.</li>
+            <li>Worked in partnership with Trent Research Centre and Northumberland Land Trust.</li>
+          </ul>
+        </div>
+      </li>
+
+      <!--
+        TEMPLATE: NEW JOB
+        Copy from <li> to </li>. Paste it in date order (newest at the top).
+
+      <li class="job">
+        <p class="when">Mon YYYY to Mon YYYY</p>
+        <div class="what">
+          <h3>Job title</h3>
+          <p class="org">Organization, City, Province</p>
+          <ul>
+            <li>What you did, starting with a strong verb.</li>
+            <li>A result, number, or outcome if you have one.</li>
+          </ul>
+        </div>
+      </li>
+      -->
+
+    </ol>
+  </div>
+</section>
+
+
+<!--
+  =====================================================================
+  AWARDS, TALKS, EDUCATION, CERTIFICATIONS
+  Two columns on desktop: awards on the left, education on the right.
+  =====================================================================
+-->
+<section class="section section--flush-top" id="recognition">
+  <div class="wrap split">
+
+    <!-- Left column: awards and talks, most recent first -->
+    <div>
+      <h2>Awards and talks</h2>
+      <div class="stack">
+        <div class="entry">
+          <p class="date">May 2021</p>
+          <h3>Agrawal Kanya Mahavidyalaya International Webinar</h3>
+          <p>Speaker.</p>
+        </div>
+        <div class="entry">
+          <p class="date">Sep 2020</p>
+          <h3>BC TRCR 43rd Annual Mine Reclamation Symposium</h3>
+          <p>Presented a research poster on biocrusts for mine reclamation. The research contributed to Taseko | Gibraltar Mine receiving the Jake McDonald Annual Award for Metal Mine Reclamation.</p>
+        </div>
+        <div class="entry">
+          <p class="date">Jun 2020</p>
+          <h3>Aqua Hacking BC 2020</h3>
+          <p>Won third place with a solution for gaps in flood risk management for small communities in BC, and received $10,000 as a finalist.</p>
+        </div>
+        <div class="entry">
+          <p class="date">Jun 2020</p>
+          <h3>Society for Ecological Restoration, Western Canada</h3>
+          <p>Webinar presentation on biocrusts and mine reclamation.</p>
+        </div>
+
+        <!--
+          TEMPLATE: NEW AWARD OR TALK (copy from <div> to </div>)
+
+        <div class="entry">
+          <p class="date">Mon YYYY</p>
+          <h3>Event or award name</h3>
+          <p>One sentence on what you did or won.</p>
+        </div>
+        -->
+      </div>
+    </div>
+
+    <!-- Right column: education, then field certifications -->
+    <div>
+      <h2>Education</h2>
+      <div class="stack">
+        <div class="entry">
+          <p class="date">2018 to 2020</p>
+          <h3>MSc, Ecological Restoration</h3>
+          <p>Simon Fraser University and British Columbia Institute of Technology</p>
+        </div>
+        <div class="entry">
+          <p class="date">2014 to 2018</p>
+          <h3>BSc Honours, Environmental and Resource Sciences</h3>
+          <p>Trent University</p>
+        </div>
+        <div class="entry">
+          <p class="date">2020 to 2021</p>
+          <h3>Idea to Innovation business program</h3>
+          <p>SFU Beedie School of Business and Mitacs</p>
+        </div>
+      </div>
+
+      <!-- EDIT: one <li> per certification. Delete or add lines freely. -->
+      <h3 class="subhead">Field certifications</h3>
+      <ul class="chips">
+        <li>WorkSafeBC Occupational First Aid Level 1</li>
+        <li>H2S Alive</li>
+        <li>Electrofishing (supervisor)</li>
+        <li>Basic Operation Drone Pilot</li>
+        <li>Ontario Benthic Biomonitoring Network</li>
+        <li>Pleasure Craft Operator Card</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+
+<!--
+  =====================================================================
+  SKILLS
+  Each group is a <div> with a heading and a list. Groups sit side by side
+  and wrap automatically.
+  =====================================================================
+-->
+<section class="section skills" id="skills">
+  <div class="wrap">
+    <h2 class="section-title">Skills</h2>
+    <p class="section-intro">What I use to get from a muddy field to a finished map.</p>
+
+    <div class="skill-grid">
+
+      <div>
+        <h3>Analytics and GIS</h3>
+        <ul>
+          <li>GIS in QGIS, Python, and Leaflet</li>
+          <li>Remote sensing with satellite, ortho-image, and LiDAR data</li>
+          <li>Parametric and non-parametric statistics</li>
+          <li>Population, ecological, air quality, and computational flood modelling</li>
+          <li>Interviewing and qualitative research</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Software and data</h3>
+        <ul>
+          <li>R and Python</li>
+          <li>PostgreSQL</li>
+          <li>Apache Airflow</li>
+          <li>Docker</li>
+          <li>BigQuery</li>
+          <li>Tableau</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Field sampling</h3>
+        <ul>
+          <li>Vegetation surveys and plant ID</li>
+          <li>Soil and biocrust sampling</li>
+          <li>Surface, ground, and drinking water quality sampling</li>
+          <li>eDNA sampling and electrofishing</li>
+          <li>High-res Trimble surveys and ground truthing</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Restoration</h3>
+        <ul>
+          <li>Tree planting and live staking</li>
+          <li>In-stream fish habitat</li>
+          <li>Wetland creation</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Laboratory</h3>
+        <ul>
+          <li>Plant tissue culture</li>
+          <li>Mycological culture and spawn production</li>
+          <li>Water quality testing</li>
+        </ul>
+      </div>
+
+      <!--
+        TEMPLATE: NEW SKILL GROUP (copy from <div> to </div>)
+
+      <div>
+        <h3>Group name</h3>
+        <ul>
+          <li>Skill one</li>
+          <li>Skill two</li>
+        </ul>
+      </div>
+      -->
+
+    </div>
+  </div>
+</section>
+
+
+<!--
+  =====================================================================
+  CONTACT
+  The closing band. Wording follows the original portfolio: the word
+  "resume" is the link, as it was in the original text.
+  The "redacted" span is the black bar that reveals its text on hover.
+  =====================================================================
+-->
+<section class="band" id="contact">
+  <div class="wrap">
+    <!-- LINK (internal): Resume  (path copied from the original portfolio) -->
+    <p class="big">My <a href="Resume">resume</a> tells you mostly where I've been. Mostly. Some of it is <span class="redacted" tabindex="0">a story for coffee</span>.</p>
+    <p class="actions">
+      <!-- LINK (email): change the address here and in the FOOTER below -->
+      <a class="btn solid" href="mailto:shantanudutt@alumni.trentu.ca">Email me</a>
+      <!-- LINK (internal): Resume -->
+      <a class="btn" href="Resume">Read the full resume</a>
+    </p>
+  </div>
+</section>
+
+</main>
+
+
+<!--
+  =====================================================================
+  FOOTER
+  =====================================================================
+-->
+<footer>
+  <div class="wrap">
+    <p>&copy; <span id="year">2026</span> Shantanu Dutt</p>
+    <ul>
+      <li><a href="mailto:shantanudutt@alumni.trentu.ca">Email</a></li>
+      <li><a href="https://github.com/ShantanuDutt1">GitHub</a></li>
+      <li><a href="https://www.youtube.com/@Kaptain_Prithvi">YouTube</a></li>
+    </ul>
+  </div>
+</footer>
+
+<!-- HERO ANIMATION: the contour map. Edit only the CONFIG block inside. -->
+<script>
+/* =====================================================================
+   HERO ANIMATION  |  the animated contour map in the hero
+   ---------------------------------------------------------------------
+   What it does:
+     1. Builds a smooth random "landscape" (a grid of heights) with noise.
+     2. Draws contour lines through it (the "marching squares" method).
+     3. Slowly drifts the landscape, and lifts a hill under the cursor.
+   You only need to touch CONFIG below. The rest is the engine.
+   Colors come from the CSS variables in the STYLES block in the HEAD
+   (--hero-bg, --hero-line, --hero-index).
+   ===================================================================== */
+
+(() => {
+  'use strict';
+
+  /* ===================================================================
+     CONFIG: safe values to play with
+     =================================================================== */
+  const CONFIG = {
+    cellSize: 16,        // pixels per grid cell. Smaller = smoother lines but slower. Try 12 to 24.
+    firstLevel: 0.15,    // height of the lowest contour line (0 to 1)
+    levelStep: 0.028,    // gap between contour lines. Smaller = more lines.
+    levelCount: 25,      // how many contour lines to draw in total
+    indexEvery: 4,       // every Nth line is drawn bold in the accent color
+    featureScale: 0.0022,// size of the hills. Smaller = bigger, gentler hills.
+    contrast: 1.6,       // how tall the hills are relative to the valleys
+    driftSpeed: 0.035,   // how fast the map changes. 0 = frozen.
+    revealSeconds: 2.8,  // how long the lines take to "rise" on page load
+    lineWidth: 1,        // thin contour lines
+    indexLineWidth: 1.6, // bold contour lines
+    hill: {
+      strength: 0.26,    // how high the cursor lifts the ground
+      radius: 150        // how wide that hill is, in pixels
+    }
+  };
+
+  /* ===================================================================
+     ENGINE (no need to edit below this line)
+     =================================================================== */
+  const canvas = document.getElementById('terrain');
+  const hero = document.querySelector('.hero');
+  if (!canvas || !hero) return;   // nothing to draw on
+
+  const ctx = canvas.getContext('2d');
+  const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const cssVar = name => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+
+  /* ---------- Noise: turns coordinates into smooth random heights (0 to 1) ---------- */
+  function hash(x, y, z) {
+    let h = Math.imul(x, 374761393) ^ Math.imul(y, 668265263) ^ Math.imul(z, 1274126177);
+    h = Math.imul(h ^ (h >>> 13), 1274126177);
+    return ((h ^ (h >>> 16)) >>> 0) / 4294967295;
+  }
+  const smooth = t => t * t * (3 - 2 * t);
+  const mix = (a, b, t) => a + (b - a) * t;
+
+  function noise(x, y, z) {
+    const xi = Math.floor(x), yi = Math.floor(y), zi = Math.floor(z);
+    const xf = smooth(x - xi), yf = smooth(y - yi), zf = smooth(z - zi);
+    return mix(
+      mix(mix(hash(xi, yi, zi),     hash(xi + 1, yi, zi),     xf), mix(hash(xi, yi + 1, zi),     hash(xi + 1, yi + 1, zi),     xf), yf),
+      mix(mix(hash(xi, yi, zi + 1), hash(xi + 1, yi, zi + 1), xf), mix(hash(xi, yi + 1, zi + 1), hash(xi + 1, yi + 1, zi + 1), xf), yf),
+      zf
+    );
+  }
+  // Three layers of noise at different sizes = natural-looking terrain.
+  const terrainNoise = (x, y, z) =>
+    noise(x, y, z) * 0.55 +
+    noise(x * 2.1 + 7.3, y * 2.1 + 1.7, z * 1.6) * 0.30 +
+    noise(x * 4.3 + 3.1, y * 4.3 + 9.2, z * 2.2) * 0.15;
+
+  /* ---------- State ---------- */
+  const { cellSize: CS, firstLevel: L0, levelStep: DL, levelCount: K } = CONFIG;
+  let width = 0, height = 0, cols = 0, rows = 0, heights = null;
+  let colors = {};
+  let visible = true;          // pauses drawing when the hero is scrolled offscreen
+  let needsRedraw = true;
+  const startTime = performance.now();
+  const pointer = { x: -9999, y: -9999, targetX: -9999, targetY: -9999, strength: 0, wanted: 0 };
+
+  /* Marching-squares lookup. Each of the 16 corner patterns maps to line
+     segments between cell edges (0 top, 1 right, 2 bottom, 3 left). */
+  const EDGES = [
+    null, [[3,2]], [[2,1]], [[3,1]], [[0,1]], [[0,1],[3,2]], [[0,2]], [[0,3]],
+    [[0,3]], [[0,2]], [[0,3],[2,1]], [[0,1]], [[3,1]], [[2,1]], [[3,2]], null
+  ];
+
+  function readColors() {
+    colors = { bg: cssVar('--hero-bg'), line: cssVar('--hero-line'), index: cssVar('--hero-index') };
+    needsRedraw = true;
+  }
+
+  function resize() {
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    width = hero.clientWidth;
+    height = hero.clientHeight;
+    if (!width || !height) return;
+    canvas.width = Math.round(width * dpr);
+    canvas.height = Math.round(height * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    cols = Math.ceil(width / CS) + 2;
+    rows = Math.ceil(height / CS) + 2;
+    heights = new Float32Array(cols * rows);
+    needsRedraw = true;
+  }
+
+  // Where a contour crosses one edge of a cell (linear interpolation).
+  let ex = 0, ey = 0;
+  function edgePoint(edge, x0, y0, a, b, c, d, level) {
+    if (edge === 0)      { ex = x0 + (level - a) / (b - a) * CS; ey = y0; }
+    else if (edge === 1) { ex = x0 + CS; ey = y0 + (level - b) / (c - b) * CS; }
+    else if (edge === 2) { ex = x0 + (level - d) / (c - d) * CS; ey = y0 + CS; }
+    else                 { ex = x0; ey = y0 + (level - a) / (d - a) * CS; }
+  }
+
+  /* ---------- One frame ---------- */
+  function draw(now) {
+    if (!heights) return;
+
+    const elapsed = (now - startTime) / 1000;
+    const time = reduceMotion ? 4 : elapsed * CONFIG.driftSpeed;
+    const reveal = reduceMotion ? 1 : Math.min(1, elapsed / CONFIG.revealSeconds);
+    const revealedLevels = Math.floor((1 - Math.pow(1 - reveal, 3)) * K) - 1;   // lines rise from low to high
+
+    // Ease the cursor hill toward the pointer so it glides.
+    pointer.x += (pointer.targetX - pointer.x) * 0.12;
+    pointer.y += (pointer.targetY - pointer.y) * 0.12;
+    pointer.strength += (pointer.wanted - pointer.strength) * 0.08;
+
+    // 1. Fill the height grid.
+    for (let j = 0; j < rows; j++) {
+      const y = j * CS;
+      for (let i = 0; i < cols; i++) {
+        const x = i * CS;
+        let h = 0.5 + (terrainNoise(x * CONFIG.featureScale + time * 0.6, y * CONFIG.featureScale, time) - 0.5) * CONFIG.contrast;
+        if (pointer.strength > 0.01) {
+          const dx = x - pointer.x, dy = y - pointer.y;
+          h += CONFIG.hill.strength * pointer.strength * Math.exp(-(dx * dx + dy * dy) / (2 * CONFIG.hill.radius * CONFIG.hill.radius));
+        }
+        heights[j * cols + i] = h;
+      }
+    }
+
+    // 2. Paint the background.
+    ctx.fillStyle = colors.bg;
+    ctx.fillRect(0, 0, width, height);
+
+    // 3. Trace contour lines cell by cell.
+    const thinPath = new Path2D(), boldPath = new Path2D();
+    for (let j = 0; j < rows - 1; j++) {
+      for (let i = 0; i < cols - 1; i++) {
+        const a = heights[j * cols + i],       b = heights[j * cols + i + 1];
+        const c = heights[(j + 1) * cols + i + 1], d = heights[(j + 1) * cols + i];
+        const lo = Math.min(a, b, c, d), hi = Math.max(a, b, c, d);
+        const firstK = Math.max(0, Math.ceil((lo - L0) / DL));
+        const lastK = Math.min(revealedLevels, Math.floor((hi - L0) / DL), K - 1);
+
+        for (let k = firstK; k <= lastK; k++) {
+          const level = L0 + k * DL;
+          const pattern = (a > level ? 8 : 0) | (b > level ? 4 : 0) | (c > level ? 2 : 0) | (d > level ? 1 : 0);
+          const segments = EDGES[pattern];
+          if (!segments) continue;
+          const path = k % CONFIG.indexEvery === 0 ? boldPath : thinPath;
+          const x0 = i * CS, y0 = j * CS;
+          for (const seg of segments) {
+            edgePoint(seg[0], x0, y0, a, b, c, d, level); const sx = ex, sy = ey;
+            edgePoint(seg[1], x0, y0, a, b, c, d, level);
+            path.moveTo(sx, sy);
+            path.lineTo(ex, ey);
+          }
+        }
+      }
+    }
+    ctx.lineWidth = CONFIG.lineWidth;      ctx.strokeStyle = colors.line;  ctx.stroke(thinPath);
+    ctx.lineWidth = CONFIG.indexLineWidth; ctx.strokeStyle = colors.index; ctx.stroke(boldPath);
+  }
+
+  function loop(now) {
+    requestAnimationFrame(loop);
+    if (!visible || document.hidden) return;   // save battery when not on screen
+    // With reduced motion the map is static, so only redraw when something changed.
+    if (reduceMotion && !needsRedraw && pointer.wanted === 0 && pointer.strength < 0.01) return;
+    draw(now);
+    needsRedraw = false;
+  }
+
+  /* ---------- Wiring ---------- */
+  hero.addEventListener('pointermove', e => {
+    const box = hero.getBoundingClientRect();
+    pointer.targetX = e.clientX - box.left;
+    pointer.targetY = e.clientY - box.top;
+    if (pointer.wanted === 0) { pointer.x = pointer.targetX; pointer.y = pointer.targetY; }   // start under the cursor
+    pointer.wanted = 1;
+  });
+  hero.addEventListener('pointerleave', () => { pointer.wanted = 0; });
+
+  new IntersectionObserver(entries => { visible = entries[0].isIntersecting; }).observe(hero);
+  new ResizeObserver(resize).observe(hero);
+  const darkQuery = matchMedia('(prefers-color-scheme: dark)');
+  if (darkQuery.addEventListener) darkQuery.addEventListener('change', readColors);
+  else if (darkQuery.addListener) darkQuery.addListener(readColors);   // older Safari
+
+  readColors();
+  resize();
+  requestAnimationFrame(loop);
+})();
+</script>
+
+<!-- PAGE BEHAVIOR: project filter buttons and footer year. -->
+<script>
+/* =====================================================================
+   PAGE BEHAVIOR  |  everything except the hero animation
+   ---------------------------------------------------------------------
+     1. Project filter buttons (All, Research, Mapping and modelling, ...)
+     2. Footer year
+
+   HOW THE FILTER WORKS (no need to edit this file to add a project):
+     - Each button in index.html has  data-filter="research"  (or mapping, modelling, comm).
+     - Each project card has  data-tags="research"  naming the one tab it lives under.
+       (If you ever want a card under two tabs, list both words separated by a space.)
+     - Clicking a button shows the cards whose data-tags include that word
+       and hides the rest. The "all" button shows everything.
+   To add a NEW category: add a button with a new data-filter value in
+   index.html, then use the same word in the data-tags of the matching cards.
+   ===================================================================== */
+
+(() => {
+  'use strict';
+
+  /* ---------- 1. Project filters ---------- */
+  const buttons = Array.from(document.querySelectorAll('.filters button'));
+  const cards = Array.from(document.querySelectorAll('.project'));
+  const grid = document.getElementById('grid');
+  const status = document.getElementById('status');   // screen-reader message: "Showing 3 projects"
+
+  function applyFilter(filter) {
+    // Highlight the active button.
+    buttons.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.filter === filter)));
+
+    // The grid re-flows into an even layout while a filter is active.
+    grid.classList.toggle('is-filtered', filter !== 'all');
+
+    let shown = 0;
+    cards.forEach(card => {
+      const tags = card.dataset.tags.split(' ');
+      const show = filter === 'all' || tags.includes(filter);
+      card.hidden = !show;                       // the [hidden] rule in the STYLES block hides it
+
+      if (show) {
+        shown++;
+        // Replay the small fade-in animation.
+        card.classList.remove('entering');
+        void card.offsetWidth;                   // forces the browser to restart the animation
+        card.classList.add('entering');
+        card.addEventListener('animationend', () => card.classList.remove('entering'), { once: true });
+      }
+    });
+
+    if (status) status.textContent = 'Showing ' + shown + (shown === 1 ? ' project' : ' projects');
+  }
+
+  buttons.forEach(button => button.addEventListener('click', () => applyFilter(button.dataset.filter)));
+
+  /* ---------- 2. Footer year ---------- */
+  const year = document.getElementById('year');
+  if (year) year.textContent = new Date().getFullYear();
+})();
+</script>
+
+</body>
+</html>
